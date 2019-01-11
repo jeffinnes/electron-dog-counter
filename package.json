@@ -1,0 +1,15 @@
+{
+  "name": "dog-counter-2.0",
+  "version": "0.1.0",
+  "description": "An electron version of the Dog Counter app. (originally written by Jason Arvin)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "Jeff Innes",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^4.0.1"
+  }
+}
