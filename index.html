@@ -4,39 +4,46 @@
 <head>
   <meta charset="UTF-8">
   <title>Hello World!</title>
+  <link rel="stylesheet" href="./styles/normalize.css">
+  <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
-  <div class="title">
+  <header>
     <h1>Dog Counter 2.0</h1>
-  </div>
-  <div class="intro">
-    <h2>Hello!</h2>
-    <h3>Welcome to Dog Counter 2.0!</h3>
-    <p>Please click the button below below when you are ready to begin!</p>
-    <button id="begin">Begin</button>
-  </div>
+  </header>
+  
+  <main>
+    <div class="intro">
+      <h2>Hello!</h2>
+      <h3>Welcome to Dog Counter 2.0!</h3>
+      <p>Please click the button below below when you are ready to begin!</p>
+      <button type="button" id="beginButton">Begin</button>
+    </div>
 
-  <div class="user-input">
-    <p>Please answer the questions below then press the "Count" button below.</p>
-    <form>
-      <label for="current">How many dogs do you have?</label>
-      <input type="number" id="current">
+    <div class="user-input">
+      <p>Please answer the questions below then press the button when you are ready to count some dogs!</p>
+      <form>
+        <label for="current">How many dogs do you have?</label>
+        <input type="number" id="current">
 
-      <label for="additional-dogs">How many more dogs do you want?</label>
-      <input type="number" id="additional-dogs">
-    </form>
+        <label for="additional-dogs">How many more dogs do you want?</label>
+        <input type="number" id="additional-dogs">
+      </form>
 
-    <button id="count-them">Let's count some dogs!</button>
-  </div>
+      <button type="button" id="count-them">Let's count some dogs!</button>
+    </div>
 
-  <div class="counting-stage">
-    <p>Please wait, there is some tough counting going on...</p>
-  </div>
+    <div class="counting-stage">
+      <p>Please wait, there is some pretty tough counting going on...</p>
+    </div>
 
-  <div class="counted">
-    <p>You currently have <span id="currentdogs">NUM</span> <span id="current-plural-state">dog</span>. If you got <span id="additionaldogs">NUM</span> more you would have <span id="totaldogs">NUM</span> <span id="future-plural-state">dogs</span>!</p>
-  </div>
+    <div class="counted">
+      <p>You currently have <span id="currentdogs">NUM</span> <span id="current-plural-state">dog</span>. If you got
+        <span id="additionaldogs">NUM</span> more you would have <span id="totaldogs">NUM</span> <span id="future-plural-state">dogs</span>!</p>
+    </div>
+  </main>
+  <script src="./render-processes/counter.js"></script>
 </body>
 
 </html>
