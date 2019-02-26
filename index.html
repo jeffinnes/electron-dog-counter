@@ -18,17 +18,17 @@
       <h2>Hello!</h2>
       <h3>Welcome to Dog Counter 2.0!</h3>
       <p>Please click the button below below when you are ready to begin!</p>
-      <button type="button" id="beginButton">Begin</button>
+      <button type="button" id="begin-button">Begin</button>
     </div>
 
     <div class="user-input">
       <p>Please answer the questions below then press the button when you are ready to count some dogs!</p>
       <form>
         <label for="current">How many dogs do you have?</label>
-        <input type="number" id="current">
+        <input type="number" id="current" required>
 
         <label for="additional-dogs">How many more dogs do you want?</label>
-        <input type="number" id="additional-dogs">
+        <input type="number" id="additional-dogs" required>
       </form>
 
       <button type="button" id="count-them">Let's count some dogs!</button>
@@ -36,6 +36,7 @@
 
     <div class="counting-stage">
       <p>Please wait, there is some pretty tough counting going on...</p>
+      <progress id="counting" max="100" value="0"></progress>
     </div>
 
     <div class="counted">
