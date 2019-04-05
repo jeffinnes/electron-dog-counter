@@ -24,14 +24,15 @@
     <div class="user-input">
       <p>Please answer the questions below then press the button when you are ready to count some dogs!</p>
       <form>
-        <label for="current">How many dogs do you have?</label>
-        <input type="number" id="current" required>
+        <label for="current-dogs-input">How many dogs do you have?</label>
+        <input type="number" id="current-dogs-input" required>
 
-        <label for="additional-dogs">How many more dogs do you want?</label>
-        <input type="number" id="additional-dogs" required>
+        <label for="additional-dogs-input">How many more dogs do you want?</label>
+        <input type="number" id="additional-dogs-input" required>
+
+        <button type="button" id="count-them">Let's count some dogs!</button>
       </form>
 
-      <button type="button" id="count-them">Let's count some dogs!</button>
     </div>
 
     <div class="counting-stage">
@@ -39,10 +40,7 @@
       <progress id="counting" max="100" value="0"></progress>
     </div>
 
-    <div class="counted">
-      <p>You currently have <span id="currentdogs">NUM</span> <span id="current-plural-state">dog</span>. If you got
-        <span id="additionaldogs">NUM</span> more you would have <span id="totaldogs">NUM</span> <span id="future-plural-state">dogs</span>!</p>
-    </div>
+    <div class="counted"></div>
   </main>
   <script src="./render-processes/counter.js"></script>
 </body>

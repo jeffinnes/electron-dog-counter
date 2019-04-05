@@ -1,4 +1,6 @@
-// This script does the hard work of manipulating the view and doing the dog math.
+/* This script does the hard work of manipulating the view and doing the dog math. */
+
+//section selecters
 let beginButton = document.querySelector("#begin-button");
 let countButton = document.querySelector("#count-them");
 let intro = document.querySelector(".intro");
@@ -7,7 +9,16 @@ let countingStage = document.querySelector(".counting-stage");
 let countingProgress = document.querySelector("#counting");
 let counted = document.querySelector(".counted");
 
+//Input element selecters
+let currentDogsInput = document.querySelector("#current-dogs-input");
+let additionalDogsInput = document.querySelector("#additional-dogs-input");
 
+// //Output element selecters
+// let currentDogsOutput = document.querySelector("#current-dogs-output");
+// let additionalDogsOutput = document.querySelector("#additional-dogs-output");
+// let totalDogsOutput = document.querySelector("#total-dogs-output");
+
+//Event listeners
 beginButton.addEventListener('click', () => {
   intro.style.display = "none";
   userInput.style.display = "block";
@@ -15,10 +26,12 @@ beginButton.addEventListener('click', () => {
 
 countButton.addEventListener('click', () => {
   let randInterval = (Math.ceil(Math.random() * Math.floor(10))) * 10;
+  let curDogs = parseInt(currentDogsInput.value);
+  let addDogs = parseInt(additionalDogsInput.value);
   
+
   userInput.style.display = "none";
   countingStage.style.display = "block";
-  console.log(randInterval);
 
   //fill loading bar
   (function () {
@@ -29,6 +42,7 @@ countButton.addEventListener('click', () => {
         progress++
         countingProgress.value = progress;
       } else {
+        counted.innerHTML = buildOutput(curDogs, addDogs);
         countingStage.style.display = "none";
         counted.style.display = "block";
       }
@@ -37,3 +51,74 @@ countButton.addEventListener('click', () => {
   
 });
 
+function buildOutput(currentDogs, additionalDogs) {
+  let totalDogs = currentDogs + additionalDogs;
+  let output = '<p>';
+
+  console.log(`currentDogs = ${currentDogs}
+  additionalDogs = ${additionalDogs}`);
+
+  switch (currentDogs) {
+    case 0:
+      output = output + `It is really sad that you don't have any dogs. My heart aches for you.</p>`;
+      break;
+    
+    case 1:
+      output = output + `You have ${currentDogs} dog. Nice.</p>`;
+      break;
+  
+    default:
+      if (currentDogs < 0) {
+        output = output + `You have ${currentDogs}? That shouldn't be possible unless you are eating dogs... leaving a palpable void in spacetime. You unholy, eldrich evil...</p>`;
+      } else {
+        output = output + `You have ${currentDogs} dogs, hurray!</p>`;
+      }
+      break;
+  }
+
+  // output = output + `</p>
+  // <p>If you got ${additionalDogs} more, you would have `;
+
+  switch (additionalDogs) {
+    case 0:
+      output = output + `<p>Truthfully, one can not have enough dogs... but if you didn't get more dogs, you would have `;
+      break;
+    
+    case 1:
+      output = output + `<p>If you only got 1 more dog, which doesn't seem like enough, you would have `;
+      break;
+  
+    default:
+      if (additionalDogs < 0) {
+        output = output + `<p>Why would you want a negative amount of dogs. What's wrong with you. Dogs are life. I guess if you had ${additionalDogs} "more" you would have `;
+      } else {
+        output = output + `<p>If you got ${additionalDogs} dogs, you would have `;
+      }
+      break;
+  }
+
+  switch (totalDogs) {
+    case 0:
+      output = output + `no dogs.</p>`;
+      break;
+
+    case 1:
+      output = output + `1 dog.</p>`;
+      break;
+
+    case -1:
+      output = output + `-1 dog...</p>`;
+      break;
+  
+    default:
+      if (totalDogs < -1) {
+        output = output + `${totalDogs} dogs. (and no one would like you)</p>`;
+      } else {
+        output = output + `${totalDogs} dogs! Such dogs! Very Bork! Havin' a happy!</p>`;
+      }
+      break;
+  }
+
+  return output;
+
+}
