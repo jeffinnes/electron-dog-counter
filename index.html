@@ -10,7 +10,7 @@
 
 <body>
   <header>
-    <h1>Dog Counter 2.0</h1>
+    <button id="reset-button">Start Over</button>
   </header>
   
   <main>
@@ -25,10 +25,10 @@
       <p>Please answer the questions below then press the button when you are ready to count some dogs!</p>
       <form>
         <label for="current-dogs-input">How many dogs do you have?</label>
-        <input type="number" id="current-dogs-input" required>
+        <input type="number" id="current-dogs-input" value="0" required>
 
         <label for="additional-dogs-input">How many more dogs do you want?</label>
-        <input type="number" id="additional-dogs-input" required>
+        <input type="number" id="additional-dogs-input" value="0" required>
 
         <button type="button" id="count-them">Let's count some dogs!</button>
       </form>

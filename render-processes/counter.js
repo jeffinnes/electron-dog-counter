@@ -8,6 +8,7 @@ let userInput = document.querySelector(".user-input");
 let countingStage = document.querySelector(".counting-stage");
 let countingProgress = document.querySelector("#counting");
 let counted = document.querySelector(".counted");
+let resetButton = document.querySelector("#reset-button");
 
 //Input element selecters
 let currentDogsInput = document.querySelector("#current-dogs-input");
@@ -19,6 +20,17 @@ let additionalDogsInput = document.querySelector("#additional-dogs-input");
 // let totalDogsOutput = document.querySelector("#total-dogs-output");
 
 //Event listeners
+resetButton.addEventListener('click', () => {
+  alert('Okay, Doin\' a reset.');
+  intro.style.display = "block";
+  userInput.style.display = "none";
+  countingStage.style.display = "none";
+  counted.style.display = "none";
+  // ToDo Clear input fields
+  currentDogsInput.value = 0;
+  additionalDogsInput.value = 0;
+});
+
 beginButton.addEventListener('click', () => {
   intro.style.display = "none";
   userInput.style.display = "block";
@@ -35,13 +47,13 @@ countButton.addEventListener('click', () => {
 
   //fill loading bar
   (function () {
-    console.log('delay function called');
     let progress = 0;
-    setInterval(() => {
+    let intervalID = setInterval(() => {
       if (progress <= 100) {
         progress++
         countingProgress.value = progress;
       } else {
+        clearInterval(intervalID); //Removes the interval from the loop
         counted.innerHTML = buildOutput(curDogs, addDogs);
         countingStage.style.display = "none";
         counted.style.display = "block";
@@ -54,9 +66,6 @@ countButton.addEventListener('click', () => {
 function buildOutput(currentDogs, additionalDogs) {
   let totalDogs = currentDogs + additionalDogs;
   let output = '<p>';
-
-  console.log(`currentDogs = ${currentDogs}
-  additionalDogs = ${additionalDogs}`);
 
   switch (currentDogs) {
     case 0:
@@ -90,7 +99,7 @@ function buildOutput(currentDogs, additionalDogs) {
   
     default:
       if (additionalDogs < 0) {
-        output = output + `<p>Why would you want a negative amount of dogs. What's wrong with you. Dogs are life. I guess if you had ${additionalDogs} "more" you would have `;
+        output = output + `<p>Why would you want a negative amount of dogs. What's wrong with you. Dogs are life...</p> <p>I guess if you had ${additionalDogs} "more", you would have `;
       } else {
         output = output + `<p>If you got ${additionalDogs} dogs, you would have `;
       }
