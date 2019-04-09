@@ -1,6 +1,6 @@
 body {
   font-family: 'Lucida Grande','Segoe UI', 'Open Sans', sans-serif;
-  background-color: #dfe6e9;
+  background-color: #dadedc;
 }
 
 .user-input,
@@ -51,11 +51,32 @@ main {
 }
 
 .intro img {
-  width: 61.8%;
+  width: 305px;
   margin: 0 auto 0 auto;
   border: 1px solid black;
 }
 
 .intro button {
   margin-top: 20px;
+}
+
+.user-input {
+  text-align: center;
+}
+
+.user-input form {
+  margin-top: 88px;
+  margin-bottom: 54px;
+}
+
+.user-input form div{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-right: 58px;
+}
+
+input[type="number"] {
+  width:50px;
 }
