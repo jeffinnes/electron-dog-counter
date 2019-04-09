@@ -1,5 +1,6 @@
 body {
   font-family: 'Lucida Grande','Segoe UI', 'Open Sans', sans-serif;
+  background-color: #dfe6e9;
 }
 
 .user-input,
@@ -8,20 +9,34 @@ body {
   display: none;
 }
 
-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 54px;
-  width: 100%;
-  text-align: center;
-  background-color: darkslategrey;
-  color: aliceblue;
+button {
+  box-shadow: 0px 1px 0px 0px #1c1b18;
+  background-color:#eae0c2;
+  background:linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+  border-radius:15px;
+	border:2px solid #333029;
+	display:inline-block;
+	cursor:pointer;
+	color:#505739;
+	font-weight:bold;
+	padding:12px 16px;
+	text-shadow:0px 1px 0px #ffffff;
 }
 
-h1 {
-  padding: 0;
-  margin: 0;
+button:hover {
+	background:linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
+	background-color:#ccc2a6;
+}
+
+button:active {
+	position:relative;
+	top:1px;
+}
+
+#reset-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 
 main {
@@ -29,4 +44,18 @@ main {
   top: 54px;
   left: 153px;
   width: 494px;
+}
+
+.intro {
+  text-align: center;
+}
+
+.intro img {
+  width: 61.8%;
+  margin: 0 auto 0 auto;
+  border: 1px solid black;
+}
+
+.intro button {
+  margin-top: 20px;
 }
