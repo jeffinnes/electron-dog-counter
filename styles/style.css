@@ -50,8 +50,10 @@ main {
   text-align: center;
 }
 
-.intro img {
-  width: 305px;
+.intro img,
+.counting-stage img,
+.counted img {
+  width: 400px;
   margin: 0 auto 0 auto;
   border: 1px solid black;
 }
@@ -79,4 +81,9 @@ main {
 
 input[type="number"] {
   width:50px;
+}
+
+.counting-stage,
+.counted  {
+  text-align: center;
 }

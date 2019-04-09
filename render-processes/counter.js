@@ -8,6 +8,7 @@ let userInput = document.querySelector(".user-input");
 let countingStage = document.querySelector(".counting-stage");
 let countingProgress = document.querySelector("#counting");
 let counted = document.querySelector(".counted");
+let output = document.querySelector('#output');
 let resetButton = document.querySelector("#reset-button");
 
 //Input element selecters
@@ -54,7 +55,7 @@ countButton.addEventListener('click', () => {
         countingProgress.value = progress;
       } else {
         clearInterval(intervalID); //Removes the interval from the loop
-        counted.innerHTML = buildOutput(curDogs, addDogs);
+        output.innerHTML = buildOutput(curDogs, addDogs);
         countingStage.style.display = "none";
         counted.style.display = "block";
       }
