@@ -1,3 +1,4 @@
+const path = require('path');
 const { app, BrowserWindow} = require('electron');
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -9,11 +10,14 @@ function createWindow () {
   win = new BrowserWindow({
     width: 800, 
     height: 600,
+    icon: path.join(__dirname, 'icons/png/64x64.png'),
     webPreferences: {
       // See: https://electronjs.org/docs/tutorial/security#2-disable-nodejs-integration-for-remote-content
       nodeIntegration: false
     }
   })
+
+  
 
   // and load the index.html of the app.
   win.loadFile('index.html')
