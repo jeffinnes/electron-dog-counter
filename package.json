@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "An electron version of the Dog Counter app. (originally written by Jason Arvin)",
   "repository": "https://github.com/jeffinnes/electron-dog-counter",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron-forge start",
