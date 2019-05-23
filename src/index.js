@@ -21,8 +21,6 @@ const createWindow = () => {
     icon: '/icons/dogecoin',
   });
 
-  console.log(__dirname + 'icons/dogecoin');
-
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/index.html`);
 
