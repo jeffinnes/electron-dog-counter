@@ -18,7 +18,10 @@ const createWindow = () => {
       // See: https://electronjs.org/docs/tutorial/security#2-disable-nodejs-integration-for-remote-content
       nodeIntegration: false,
     },
+    icon: '/icons/dogecoin',
   });
+
+  console.log(__dirname + 'icons/dogecoin');
 
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/index.html`);

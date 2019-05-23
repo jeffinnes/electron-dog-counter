@@ -13,7 +13,7 @@
     "lint": "eslint src --color"
   },
   "keywords": [],
-  "author": "jeffdango",
+  "author": "Jeff Innes",
   "license": "MIT",
   "config": {
     "forge": {
@@ -30,10 +30,12 @@
         ]
       },
       "electronPackagerConfig": {
-        "packageManager": "npm"
+        "packageManager": "npm",
+        "icon": "src/icons/dogecoin"
       },
       "electronWinstallerConfig": {
-        "name": "dog_counter"
+        "name": "dog_counter",
+        "icon": "src/icons/dogecoin"
       },
       "electronInstallerDebian": {},
       "electronInstallerRedhat": {},
